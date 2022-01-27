@@ -1,4 +1,4 @@
-package our.connectfour.controller;
+package our.connectfour;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
