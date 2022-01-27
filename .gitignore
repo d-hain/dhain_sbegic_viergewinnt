@@ -1,3 +1,7 @@
+# Fuer Pflichtenheft
+*.doc
+*.docx
+
 # Compiled class file
 *.class
 
