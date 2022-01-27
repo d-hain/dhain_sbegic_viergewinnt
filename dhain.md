@@ -10,8 +10,8 @@
 
 ## Tag 2
 
- * Intellij Project vom Github Repos gecloned und umgewandelt, dass es funktioniert.
- * fertigstellung des Klassendiagramms.
+ * Intellij Project vom Github Repos gecloned und umgewandelt, dass es funktioniert
+ * Fertigstellung des Klassendiagramms
  * Beginnen von der erstellung der Klassen und Funktionen 
- * "Ausprgrammierung" der Player und Symbol Klassen. 
- * Besprechung der Aufgabe und des Spielfeldes.
+ * "Ausprogrammierung" der Player und Tile Klassen.
+ * Besprechung der Aufgabe und des Spielfeldes

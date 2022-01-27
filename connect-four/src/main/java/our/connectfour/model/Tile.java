@@ -5,20 +5,20 @@ import javafx.scene.paint.Color;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Symbol{
+public class Tile{
     private String shape;
     private Color color;
 
-    public Symbol(Color color){
+    public Tile(Color color){
         setColor(color);
     }
 
     // TODO: Standartsymbole machen
-    public Symbol(){
+    public Tile(){
         this.shape = "x";
     }
 
-    public Symbol(String shape){
+    public Tile(String shape){
         setShape(shape);
     }
 
@@ -27,8 +27,8 @@ public class Symbol{
     }
 
     /**
-     * The symbol shape can only be a letter
-     * @param shape The shape of the symbol
+     * The tile shape can only be a letter
+     * @param shape The shape of the tile
      */
     public void setShape(String shape){
         Pattern pattern = Pattern.compile("[a-zA-Z]");

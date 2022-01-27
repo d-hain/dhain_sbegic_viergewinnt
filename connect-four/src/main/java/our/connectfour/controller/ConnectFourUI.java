@@ -5,10 +5,6 @@ public class ConnectFourUI{
         return 0;
     }
 
-    private int checkWin(){
-        return 0;
-    }
-
     private boolean isLegalMove(){
         return false;
     }

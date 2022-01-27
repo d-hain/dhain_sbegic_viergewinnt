@@ -5,18 +5,18 @@ import java.util.regex.Pattern;
 
 public class Player{
     private String name;
-    private Symbol symbol;
+    private Tile tile;
 
     public Player(){
     }
 
-    public Player(String name, Symbol symbol){
+    public Player(String name, Tile tile){
         setName(name);
-        setSymbol(symbol);
+        setTile(tile);
     }
 
-    public Player(Symbol symbol){
-        setSymbol(symbol);
+    public Player(Tile tile){
+        setTile(tile);
     }
 
     public Player(String name){
@@ -45,11 +45,11 @@ public class Player{
         }
     }
 
-    public Symbol getSymbol(){
-        return symbol;
+    public Tile getTile(){
+        return tile;
     }
 
-    public void setSymbol(Symbol symbol){
-        this.symbol = symbol;
+    public void setTile(Tile tile){
+        this.tile = tile;
     }
 }

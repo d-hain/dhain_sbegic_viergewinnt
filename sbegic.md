@@ -7,10 +7,10 @@
  * besprechen der Klassen/Funktionen. 
  * Markieren der wichtigtsen Sachen im Pflichtenheft Vier-Gewinnt.docx
 
-## Arbeitstag 2
+## Arbeitsbericht Tag 2
 
- * Intellij Project vom Github Repos gecloned und umgewandelt, dass es funktioniert.
- * fertigstellung des Klassendiagramms.
- * Beginnen von der erstellung der Klassen und Funktionen 
- * "Ausprgrammierung" der Player und Symbol Klassen. 
- * Besprechung der Aufgabe und des Spielfeldes.
+ * Intellij Project vom Github Repos gecloned und umgewandelt, dass es funktioniert
+ * Fertigstellung des Klassendiagramms
+ * Beginnen von der Erstellung der Klassen und Funktionen 
+ * "Ausprogrammierung" der Player und Tile Klassen.
+ * Besprechung der Aufgabe und des Spielfeldes
