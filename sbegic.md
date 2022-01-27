@@ -6,3 +6,8 @@
  * Arbeiten am Klassendiagramm in GenMyModel 
  * besprechen der Klassen/Funktionen. 
  * Markieren der wichtigtsen Sachen im Pflichtenheft Vier-Gewinnt.docx
+
+## Arbeitstag 2
+
+ * Intellij Project vom Github Repos gecloned und umgewandelt, dass es funktioniert.
+ * fertigstellung des Klassendiagramms.
