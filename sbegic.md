@@ -14,3 +14,8 @@
  * Beginnen von der Erstellung der Klassen und Funktionen 
  * "Ausprogrammierung" der Player und Tile Klassen.
  * Besprechung der Aufgabe und des Spielfeldes
+
+## Arbeitsbericht Tag 3
+
+ * Controller Klasse "ConnectFourConsole.java" so weit ausprogrammiert, dass man die funktion verstehen kann, was sie tun soll.
+ * besprechung der Klassen und verbesserung des Diagramms. 
