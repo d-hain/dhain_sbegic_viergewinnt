@@ -229,6 +229,20 @@
           </eAnnotations>
         </xmi:Extension>
       </elementImport>
+      <elementImport xmi:id="_od1zsWI9EDq2uaigg-IjGg" importedElement="_od1zsGI9EDq2uaigg-IjGg" importingNamespace="_9BjzEFwhEDq_9vQ4zkgp4A">
+        <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+          <eAnnotations xmi:id="_od1zsWI9EDq2uaigg-IjGg0" source="genmymodel">
+            <details xmi:id="_od1zsWI9EDq2uaigg-IjGg00" key="uuid" value="_od1zsWI9EDq2uaigg-IjGg"/>
+          </eAnnotations>
+        </xmi:Extension>
+      </elementImport>
+      <elementImport xmi:id="_pmlkcGI9EDq2uaigg-IjGg" importedElement="_pmk9YGI9EDq2uaigg-IjGg" importingNamespace="_9BjzEFwhEDq_9vQ4zkgp4A">
+        <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+          <eAnnotations xmi:id="_pmlkcGI9EDq2uaigg-IjGg0" source="genmymodel">
+            <details xmi:id="_pmlkcGI9EDq2uaigg-IjGg00" key="uuid" value="_pmlkcGI9EDq2uaigg-IjGg"/>
+          </eAnnotations>
+        </xmi:Extension>
+      </elementImport>
       <packagedElement xsi:type="uml:Class" xmi:id="_8igqIFwiEDq_9vQ4zkgp4A" name="PlayFieldViewConsole">
         <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
           <eAnnotations xmi:id="_8igqIFwiEDq_9vQ4zkgp4A0" source="genmymodel">
@@ -262,13 +276,12 @@
               </eAnnotations>
             </xmi:Extension>
           </ownedParameter>
-          <ownedParameter xmi:id="_mqTgYlwlEDq_9vQ4zkgp4A" name="str">
+          <ownedParameter xmi:id="_mqTgYlwlEDq_9vQ4zkgp4A" name="playField" type="_od1zsGI9EDq2uaigg-IjGg">
             <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
               <eAnnotations xmi:id="_mqTgYlwlEDq_9vQ4zkgp4A0" source="genmymodel">
                 <details xmi:id="_mqTgYlwlEDq_9vQ4zkgp4A00" key="uuid" value="_mqTgYlwlEDq_9vQ4zkgp4A"/>
               </eAnnotations>
             </xmi:Extension>
-            <type xsi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#//String"/>
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
@@ -377,13 +390,12 @@
               </eAnnotations>
             </xmi:Extension>
           </ownedParameter>
-          <ownedParameter xmi:id="_iIAZ4FwlEDq_9vQ4zkgp4A" name="str">
+          <ownedParameter xmi:id="_iIAZ4FwlEDq_9vQ4zkgp4A" name="playField" type="_od1zsGI9EDq2uaigg-IjGg">
             <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
               <eAnnotations xmi:id="_iIAZ4FwlEDq_9vQ4zkgp4A0" source="genmymodel">
                 <details xmi:id="_iIAZ4FwlEDq_9vQ4zkgp4A00" key="uuid" value="_iIAZ4FwlEDq_9vQ4zkgp4A"/>
               </eAnnotations>
             </xmi:Extension>
-            <type xsi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#//String"/>
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
@@ -478,13 +490,12 @@
               </eAnnotations>
             </xmi:Extension>
           </ownedParameter>
-          <ownedParameter xmi:id="_ZuWnEmGmEDq6TeLH00MMSw" name="str">
+          <ownedParameter xmi:id="_ZuWnEmGmEDq6TeLH00MMSw" name="playField" type="_od1zsGI9EDq2uaigg-IjGg">
             <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
               <eAnnotations xmi:id="_ZuWnEmGmEDq6TeLH00MMSw0" source="genmymodel">
                 <details xmi:id="_ZuWnEmGmEDq6TeLH00MMSw00" key="uuid" value="_ZuWnEmGmEDq6TeLH00MMSw"/>
               </eAnnotations>
             </xmi:Extension>
-            <type xsi:type="uml:PrimitiveType" href="http://www.omg.org/spec/UML/20131001/PrimitiveTypes.xmi#//String"/>
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
@@ -826,6 +837,20 @@
       <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
         <eAnnotations xmi:id="_vQpjsGHOEDqU6a6jc_WlEA0" source="genmymodel">
           <details xmi:id="_vQpjsGHOEDqU6a6jc_WlEA00" key="uuid" value="_vQpjsGHOEDqU6a6jc_WlEA"/>
+        </eAnnotations>
+      </xmi:Extension>
+    </packagedElement>
+    <packagedElement xsi:type="uml:DataType" xmi:id="_od1zsGI9EDq2uaigg-IjGg" name="PlayField">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations xmi:id="_od1zsGI9EDq2uaigg-IjGg0" source="genmymodel">
+          <details xmi:id="_od1zsGI9EDq2uaigg-IjGg00" key="uuid" value="_od1zsGI9EDq2uaigg-IjGg"/>
+        </eAnnotations>
+      </xmi:Extension>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" xmi:id="_pmk9YGI9EDq2uaigg-IjGg" name="Class1">
+      <xmi:Extension extender="http://www.eclipse.org/emf/2002/Ecore">
+        <eAnnotations xmi:id="_pmk9YGI9EDq2uaigg-IjGg0" source="genmymodel">
+          <details xmi:id="_pmk9YGI9EDq2uaigg-IjGg00" key="uuid" value="_pmk9YGI9EDq2uaigg-IjGg"/>
         </eAnnotations>
       </xmi:Extension>
     </packagedElement>
