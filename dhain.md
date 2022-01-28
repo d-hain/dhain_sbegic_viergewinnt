@@ -15,3 +15,9 @@
  * Beginnen von der erstellung der Klassen und Funktionen 
  * "Ausprogrammierung" der Player und Tile Klassen.
  * Besprechung der Aufgabe und des Spielfeldes
+
+## Tag 3
+
+ * Alle Kommentare in PlayField, Player und Tile hinzugefügt
+ * Eine Methode in PlayField hinzugefügt
+ * Klassendiagramm geupdated
