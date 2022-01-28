@@ -1,3 +1,28 @@
+/*-----------------------------------------------------------------------------
+ *              Hoehere Technische Bundeslehranstalt STEYR
+ *           Fachrichtung Elektronik und Technische Informatik
+ *----------------------------------------------------------------------------*/
+/**
+ * Kurzbeschreibung
+ *
+ * @author  : Semin Begic, David Hain
+ * @date    : 28.01.2022
+ *
+ * @details
+ *   * Playername
+ *   * Player Tile
+ *   * Constructors
+ *      * empty
+ *      * name, tile
+ *      * tile
+ *      * name
+ *   * Getters and Setters
+ *      * name
+ *      * tile
+ *
+ * @see our.connectfour.model.Tile
+ */
+
 package our.connectfour.model;
 
 import java.util.regex.Matcher;
@@ -7,22 +32,42 @@ public class Player{
     private String name;
     private Tile tile;
 
+    /**
+     * Empty Player contructor
+     */
     public Player(){
     }
 
+    /**
+     * Contructor for Player with name and Tile
+     * @param name name of the Player
+     * @param tile tile of the Player (shape & color)
+     */
     public Player(String name, Tile tile){
         setName(name);
         setTile(tile);
     }
 
+    /**
+     * Constructor for Player with only Tile
+     * @param tile Tile (shape & color)
+     */
     public Player(Tile tile){
         setTile(tile);
     }
 
+    /**
+     * Constructor for Player with only name
+     * @param name name of the Player
+     */
     public Player(String name){
         setName(name);
     }
 
+    /**
+     * Get name of the Player
+     * @return Playername
+     */
     public String getName(){
         return name;
     }
@@ -45,10 +90,18 @@ public class Player{
         }
     }
 
+    /**
+     * Get Tile of the Player
+     * @return Tile (shape & color)
+     */
     public Tile getTile(){
         return tile;
     }
 
+    /**
+     * Set the Tile of the Player
+     * @param tile Tile (shape & color)
+     */
     public void setTile(Tile tile){
         this.tile = tile;
     }
