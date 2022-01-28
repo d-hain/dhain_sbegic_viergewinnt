@@ -16,16 +16,4 @@ public class ConnectFourConsole{
     private int generateNumber(int start, int end){
         return 0;
     }
-
-    private void restart(){
-
-    }
-
-    private void undo(){
-
-    }
-
-    private boolean isLegalMove(){
-        return false;
-    }
 }

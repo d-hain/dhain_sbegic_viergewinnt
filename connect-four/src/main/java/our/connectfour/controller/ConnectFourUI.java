@@ -4,8 +4,4 @@ public class ConnectFourUI{
     private int generateNumber(int start, int end){
         return 0;
     }
-
-    private boolean isLegalMove(){
-        return false;
-    }
 }

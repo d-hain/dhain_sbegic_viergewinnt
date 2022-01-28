@@ -9,6 +9,10 @@ public class Tile{
     private String shape;
     private Color color;
 
+    /**
+     *
+     * @param color
+     */
     public Tile(Color color){
         setColor(color);
     }
