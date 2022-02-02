@@ -5,21 +5,18 @@
 /**
  * Kurzbeschreibung
  *
- * @author  : Semin Begic, David Hain
- * @date    : 28.01.2022
- *
- * @details
- *   * Playername
- *   * Player Tile
- *   * Constructors
- *      * empty
- *      * name, tile
- *      * tile
- *      * name
- *   * Getters and Setters
- *      * name
- *      * tile
- *
+ * @author : Semin Begic, David Hain
+ * @date : 28.01.2022
+ * @details * Playername
+ * * Player Tile
+ * * Constructors
+ * * empty
+ * * name, tile
+ * * tile
+ * * name
+ * * Getters and Setters
+ * * name
+ * * tile
  * @see our.connectfour.model.Tile
  */
 
@@ -31,12 +28,6 @@ import java.util.regex.Pattern;
 public class Player{
     private String name;
     private Tile tile;
-
-    /**
-     * Empty Player contructor
-     */
-    public Player(){
-    }
 
     /**
      * Contructor for Player with name and Tile
@@ -79,14 +70,10 @@ public class Player{
     public void setName(String name){
         Pattern pattern = Pattern.compile("[a-zA-Z0-9]+");
         Matcher matcher = pattern.matcher(name);
-        try{
-            if(matcher.matches()){
-                this.name = name;
-            } else{
-                throw new IllegalArgumentException();
-            }
-        }catch(Exception e){
-            e.printStackTrace();
+        if(matcher.matches()){
+            this.name = name;
+        } else{
+            throw new IllegalArgumentException();
         }
     }
 

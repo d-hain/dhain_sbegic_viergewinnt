@@ -5,12 +5,12 @@
 /**
  * Kurzbeschreibung
  *
- * @author  : Semin Begic, David Hain
- * @date    : 28.01.2022
- *
- * @details
- *   TODO: Beschreibung machen
- *
+ * @author : Semin Begic, David Hain
+ * @date : 28.01.2022
+ * @details * Constructor
+ * * color
+ * * shape
+ * * Getters and Setters with RegEx checks
  */
 
 package our.connectfour.model;
@@ -25,19 +25,16 @@ public class Tile{
     private Color color;
 
     /**
+     * empty Constructor
+     */
+    public Tile(){}
+    
+    /**
      * Constructor for Tile with only color
      * @param color color of the Tile in the UI
      */
     public Tile(Color color){
         setColor(color);
-    }
-
-    // TODO: Standartsymbole machen
-    /**
-     * Constructor that sets the standard letters for the shape
-     */
-    public Tile(){
-        this.shape = "x";
     }
 
     /**
@@ -57,20 +54,17 @@ public class Tile{
     }
 
     /**
+     * Sets the shape of the tile
      * The tile shape can only be a letter
      * @param shape The shape of the Tile
      */
     public void setShape(String shape){
         Pattern pattern = Pattern.compile("[a-zA-Z]");
         Matcher matcher = pattern.matcher(shape);
-        try{
-            if(matcher.matches()){
-                this.shape = shape;
-            }else {
-                throw new IllegalArgumentException();
-            }
-        }catch(Exception e){
-            e.printStackTrace();
+        if(matcher.matches()){
+            this.shape = shape;
+        } else{
+            throw new IllegalArgumentException();
         }
     }
 

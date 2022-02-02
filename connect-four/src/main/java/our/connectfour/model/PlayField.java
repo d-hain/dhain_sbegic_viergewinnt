@@ -9,20 +9,29 @@
  * @date    : 28.01.2022
  *
  * @details
- *   TODO: Beschreibung machen
+ *   * Tile Array (Playing Field)
+ *   * Constructor
+ *   * checkWin
+ *      * checks if a player has won or it is a tie
+ *   * restart
+ *      * restarts the game from the beginning
+ *   * undo
+ *      * undo the last move
+ *   * isLegalMove
+ *      * checks if the move is allowed (inside field etc.)
  *
  */
 
 package our.connectfour.model;
 
 public class PlayField extends Tile{
-    private Tile[] field;
+    private Tile[][] field;
 
     /**
      * Constructor for the Tile Array
      * @param field Tile Array
      */
-    public PlayField(Tile[] field){
+    public PlayField(Tile[][] field){
         this.field = field;
     }
 
@@ -52,18 +61,6 @@ public class PlayField extends Tile{
         }
 
         return 0;
-    }
-
-    /**
-     * Checks to the left or to the right for Tiles that have the same shape or color
-     * @param direction 1 ... to the right
-     *                  -1 ... to the left
-     * @param currentTile the number of the Tile in the playing field Array
-     * @return true ... the Player has won (in that direction)
-     *         false ... the Player has not won (in that direction)
-     */
-    private boolean checkHorizontal(int direction, int currentTile){
-        return false;
     }
 
     /**
