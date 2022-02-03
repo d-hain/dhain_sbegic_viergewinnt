@@ -8,7 +8,7 @@
  * @author : Semin Begic, David Hain
  * @date : 28.01.2022
  * @details * Constructor
- * * color
+ * * color & shape
  * * shape
  * * Getters and Setters with RegEx checks
  */
@@ -28,18 +28,20 @@ public class Tile{
      * empty Constructor
      */
     public Tile(){}
-    
+
     /**
-     * Constructor for Tile with only color
+     * Constructor for Tile with the color and a shape
      * @param color color of the Tile in the UI
+     * @param shape shape of the Tile ([A-Za-z] on keyboard)
      */
-    public Tile(Color color){
+    public Tile(Color color, String shape){
         setColor(color);
+        setShape(shape);
     }
 
     /**
      * Constructor for Tile with only shape
-     * @param shape shape of the Tile
+     * @param shape shape of the Tile ([A-Za-z] on keyboard)
      */
     public Tile(String shape){
         setShape(shape);
@@ -59,7 +61,7 @@ public class Tile{
      * @param shape The shape of the Tile
      */
     public void setShape(String shape){
-        Pattern pattern = Pattern.compile("[a-zA-Z]");
+        Pattern pattern = Pattern.compile("[a-zA-Z]"); //([a-zA-Z]|[ ])
         Matcher matcher = pattern.matcher(shape);
         if(matcher.matches()){
             this.shape = shape;

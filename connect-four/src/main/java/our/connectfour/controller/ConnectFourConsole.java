@@ -34,26 +34,26 @@ public class ConnectFourConsole{
      */
     private void play(){
 
-        do{
-        displayField.display(game.playField);
-        Scanner in = new Scanner(System.in);
-        int inputLine =0;
-
-        if(generateNumber(1,2) == 1){
-            System.out.println(game.p1.getName() + " beginnt das Spiel!\n");
-        }else{
-            System.out.println(game.p2.getName() + " beginnt das Spiel!\n");
-        }
-
-        do{
-            System.out.println("Bitte geben Sie ihre Gewünschte Spalte an, in der Sie Ihren Stein setzen wollen: ");
-            inputLine = in.nextInt();
-
-        }while(true); //TODO: game.playField.isLegalMove(inputLine)
-
-       //TODO: new PlayFieldViewConsole(game.playField.checkWin());
-
-        }while(game.playField.checkWin() == 3);
+//        do{
+//        displayField.display(game.playField);
+//        Scanner in = new Scanner(System.in);
+//        int inputLine = 0;
+//
+//        if(generateNumber(1,2) == 1){
+//            System.out.println(game.p1.getName() + " beginnt das Spiel!\n");
+//        }else{
+//            System.out.println(game.p2.getName() + " beginnt das Spiel!\n");
+//        }
+//
+//        do{
+//            System.out.println("Bitte geben Sie ihre Gewünschte Spalte an, in der Sie Ihren Stein setzen wollen: ");
+//            inputLine = in.nextInt();
+//
+//        }while(true); //TODO: game.playField.isLegalMove(inputLine)
+//
+//       //TODO: new PlayFieldViewConsole(game.playField.checkWin());
+//
+//        }while(game.playField.checkWin() == 3); //TODO: muss geändert werden mit checkTie
     }
 
     /**

@@ -5,27 +5,50 @@
 /**
  * Kurzbeschreibung
  *
- * @author  : Semin Begic, David Hain
- * @date    : 28.01.2022
- *
- * @details
- *   * Tile Array (Playing Field)
- *   * Constructor
- *   * checkWin
- *      * checks if a player has won or it is a tie
- *   * restart
- *      * restarts the game from the beginning
- *   * undo
- *      * undo the last move
- *   * isLegalMove
- *      * checks if the move is allowed (inside field etc.)
- *
+ * @author : Semin Begic, David Hain
+ * @date : 28.01.2022
+ * @details * Tile Array (Playing Field)
+ * * Constructor
+ * * checkWin
+ * * checks if a player has won or it is a tie
+ * * restart
+ * * restarts the game from the beginning
+ * * undo
+ * * undo the last move
+ * * isLegalMove
+ * * checks if the move is allowed (inside field etc.)
  */
 
 package our.connectfour.model;
 
+import java.util.Objects;
+
 public class PlayField extends Tile{
+    private static final int maxArea = 4;
+    private static final int win = 4;
+    private static final int winDist = win - 1;
     private Tile[][] field;
+
+    public Tile[][] getField(){
+        return field;
+    }
+
+    public void setField(Tile[][] field){
+        this.field = field;
+    }
+
+    //TODO: ???
+//    public static void main(String[] args){
+//        Tile[][] tiles = new Tile[6][7];
+//        for(int i = 0; i < 6; i++){
+//            for(int j = 0; j < 7; j++){
+//                tiles[i][j].setShape("x");
+//            }
+//        }
+//        PlayField sfield = new PlayField(tiles);
+//        Player p1 = new Player("Cock", new Tile("x"));
+//        boolean test = sfield.checkWin(5, 5, p1);
+//    }
 
     /**
      * Constructor for the Tile Array
@@ -37,30 +60,99 @@ public class PlayField extends Tile{
 
     /**
      * Checks if a Player has won or it is a tie
-     * @return 0 ... No Player has won
-     *         1 ... Player 1 has won
-     *         2 ... Player 2 has won
-     *         3 ... Tie
-     */
-    public int checkWin(){
-        /*
-         * Four Tiles next to one another with the same shape or color and the Player has won
-         *   * Diagonal
-         *   * Horizontal
-         *   * Vertical
-         *
-         * If a Tile with another shape has been found then stop counting in that direction
-         * If you encounter a border of the playing field stop counting in that direction
-         * If you go under 0 or over the playing field maximum stop counting in that direction
-         *
-         */
+     * @param x player last move x-coordinate
+     * @param y player last move y-coordinate
+     * @param currPlayer the Player to check if he has won
+     * @return true or false if currentPlayer has won
+     */ //TODO: Testen
+    public boolean checkWin(int x, int y, Player currPlayer){
+        int winCount = 0;
+        int ix = 0;
+        int iy = 0;
+        boolean winner = false;
 
-        // Go through the field and check ever Tile in ever direction
-        for(int i = 0; i < field.length; i++){
-
+        //horizontal
+        for (ix = initNegative(x); inArea(ix) && !winner; ix++) {
+            if (field[ix][iy].getShape().equals(currPlayer.getTile().getShape())) {
+                winCount++;
+            } else {
+                winCount = 0;
+            }
+            if (winCount >= win) {
+                winner = true;
+            }
         }
 
-        return 0;
+        //vertical
+        for (iy = initNegative(y); inArea(iy) && !winner; iy++) {
+            if (field[ix][iy].getShape().equals(currPlayer.getTile().getShape())) {
+                winCount++;
+            } else {
+                winCount = 0;
+            }
+            if (winCount >= win) {
+                winner = true;
+            }
+        }
+
+        //left up to right down
+        for (ix = initNegative(x), iy = initNegative(y); inArea(ix) && inArea(iy) && !winner; ix++, iy++) {
+            if (field[ix][iy].getShape().equals(currPlayer.getTile().getShape())) {
+                winCount++;
+            } else {
+                winCount = 0;
+            }
+            if (winCount >= win) {
+                winner = true;
+            }
+        }
+
+        //left down to right up
+        for (ix = initNegative(x), iy = initPositive(y); inArea(ix) && inArea(iy) && !winner; ix++, iy--) {
+            if (field[ix][iy].getShape().equals(currPlayer.getTile().getShape())) {
+                winCount++;
+            } else {
+                winCount = 0;
+            }
+            if (winCount >= win) {
+                winner = true;
+            }
+        }
+
+        return winner;
+    }
+
+    /**
+     * checks if the game is a tie
+     * @return Tie yes or no
+     */ //TODO: Testen
+    boolean checkTie(){
+        boolean isTie = true;
+        int x = 0;
+        int y;
+
+        while(x < maxArea && isTie){
+            y = 0;
+            while(y < maxArea && isTie){
+                isTie = (!Objects.equals(field[x][y].getShape(), ""));
+                y++;
+            }
+            x++;
+        }
+
+        return isTie;
+    }
+
+    private int initNegative(int z){
+        return Math.max(z, 0);
+    }
+
+    private int initPositive(int z){
+        return (z >= maxArea) ? maxArea - 1 : z;
+    }
+
+    private boolean inArea(int iz){
+        return iz < maxArea && iz >= 0;
     }
 
     /**
