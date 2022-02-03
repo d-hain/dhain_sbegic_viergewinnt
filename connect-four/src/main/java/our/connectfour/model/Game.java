@@ -5,6 +5,14 @@ public class Game{
     private Player p1;
     private Player p2;
 
+    public PlayField getPlayField(){
+        return playField;
+    }
+
+    public void setPlayField(PlayField playField){
+        this.playField = playField;
+    }
+
     public Game(PlayField playField, Player p1, Player p2){
         this.playField = playField;
         this.p1 = p1;
