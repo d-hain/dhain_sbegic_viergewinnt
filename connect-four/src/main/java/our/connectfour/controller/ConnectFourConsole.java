@@ -13,13 +13,8 @@
  */
 
 package our.connectfour.controller;
-
-import our.connectfour.model.Game;
-import our.connectfour.model.PlayField;
-import our.connectfour.model.Player;
-import our.connectfour.view.ErrorViewConsole;
-import our.connectfour.view.InputViewConsole;
-import our.connectfour.view.PlayFieldViewConsole;
+import our.connectfour.model.*;
+import our.connectfour.view.*;
 
 import java.util.Scanner;
 

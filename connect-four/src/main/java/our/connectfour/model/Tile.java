@@ -15,7 +15,7 @@
 
 package our.connectfour.model;
 
-import javafx.scene.paint.Color;
+import javafx.scene.paint.*;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
