@@ -21,3 +21,15 @@
  * Alle Kommentare in PlayField, Player und Tile hinzugefügt
  * Eine Methode in PlayField hinzugefügt
  * Klassendiagramm geupdated
+
+## Tag 4
+
+ * Klassen fertiggestellt
+  * Player
+  * Game
+  * Tile
+  * ErrorViewConsole
+  * InputViewConsole
+  * PlayFieldViewConsole
+ * ConnectFourConsole play() bis auf 1 Fehler fertig
+ * PlayField checkWin() noch nicht ganz funktionsfähig
