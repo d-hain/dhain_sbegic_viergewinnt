@@ -30,30 +30,36 @@ public class ConnectFourConsole{
     private Player p2;
     private PlayFieldViewConsole displayField;
     private Game game = new Game();
+    private int whoBegins = 0;
 
-    public PlayField getPlayField(){
+    public void setWhoBegins(int whoBegins) {
+        this.whoBegins = whoBegins;
+    }
+
+    public PlayField getPlayField() {
         return playField;
     }
 
-    public void setPlayField(PlayField playField){
+    public void setPlayField(PlayField playField) {
         this.playField = playField;
     }
 
-    public Player getP1(){
+    public Player getP1() {
         return p1;
     }
 
-    public void setP1(Player p1){
+    public void setP1(Player p1) {
         this.p1 = p1;
     }
 
-    public Player getP2(){
+    public Player getP2() {
         return p2;
     }
 
-    public void setP2(Player p2){
+    public void setP2(Player p2) {
         this.p2 = p2;
     }
+
 
     /**
      *

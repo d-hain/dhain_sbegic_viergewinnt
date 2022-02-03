@@ -1,7 +1,88 @@
 package our.connectfour.model;
 
+import our.connectfour.controller.ConnectFourConsole;
+import our.connectfour.view.ErrorViewConsole;
+
+import java.util.Scanner;
+
 public class Game{
-    public void initGame(){
+    ConnectFourConsole cfc = new ConnectFourConsole();
+    ErrorViewConsole evc = new ErrorViewConsole();
+
+    public void initGame() {
+        Scanner sc = new Scanner(System.in);
+        String name1;
+        String name2;
+        String symbol1;
+        String symbol2;
+        Tile tile1;
+        Tile tile2;
+        int random = (int) (Math.random() * 2);
+
+        System.out.println("Willkommen zu VierGewinnt\n");
+
+        do {
+            System.out.println("Bitte gib deinen Namen ein P1: ");
+            name1 = sc.nextLine();
+
+            System.out.println("Bitte gib deinen Namen ein P2: ");
+            name2 = sc.nextLine();
+
+            if (name1.equals(name2)) {
+                evc.display("Keine gleichen Namen verwenden!");
+            }
+
+        } while (name1.equals(name2));
+        Player p1 = new Player(name1);
+        Player p2 = new Player(name2);
+
+
+
+        do {
+            System.out.println("Setzen Sie nun Ihre Symbole! Falls nichts " +
+                    "angegeben wird werden Standardsymbole (x für P1 & o für P2) verwendet.\n");
+
+
+            System.out.println("Bitte gib dein Symbol ein P1: ");
+            symbol1 = sc.nextLine();
+            if (true){
+                tile1 = new Tile("x");
+            }else{
+                tile1 = new Tile(symbol1);
+            }
+
+
+            System.out.println("Bitte gib dein Symbol ein P2: ");
+            symbol2 = sc.nextLine();
+            if (true){
+                tile2 = new Tile("o");
+            }else{
+                tile2 = new Tile(symbol2);
+            }
+
+
+            if (symbol1.equals(symbol2)) {
+                evc.display("Keine gleichen Symbole verwenden!");
+            }
+
+        } while (symbol1.equals(symbol2));
+        p1.setTile(tile1);
+        p2.setTile(tile2);
+
+
+
+        if (random == 1){
+            System.out.println(p1.getName() + " beginnt das Spiel");
+        }else{
+            System.out.println(p2.getName() + " beginnt das Spiel");
+        }
+        cfc.setWhoBegins(random);
+
+
+
+
+
+
 
     }
 
