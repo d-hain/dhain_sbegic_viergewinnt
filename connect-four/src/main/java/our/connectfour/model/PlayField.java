@@ -23,7 +23,7 @@ package our.connectfour.model;
 
 import java.util.Objects;
 
-public class PlayField extends Tile{
+public class PlayField{
     private static final int maxArea = 4;
     private static final int win = 4;
     private static final int winDist = win - 1;
@@ -37,31 +37,27 @@ public class PlayField extends Tile{
         this.field = field;
     }
 
-    //TODO: ???
-//    public static void main(String[] args){
-//        Tile[][] tiles = new Tile[6][7];
-//        for(int i = 0; i < 6; i++){
-//            for(int j = 0; j < 7; j++){
-//                tiles[i][j].setShape("x");
-//            }
-//        }
-//        PlayField sfield = new PlayField(tiles);
-//        Player p1 = new Player("Cock", new Tile("x"));
-//        boolean test = sfield.checkWin(5, 5, p1);
-//    }
-
     /**
      * Constructor for the Tile Array
-     * @param field Tile Array
+     *
+     * @param maxX maximal x of the 2D Array
+     * @param maxY maximal y of the 2D Array
      */
-    public PlayField(Tile[][] field){
-        this.field = field;
+    public PlayField(int maxX, int maxY){
+        field = new Tile[maxX][maxY];
+
+        for(int x = 0; x < maxX; x++){
+            for(int y = 0; y < maxY; y++){
+                field[x][y] = new Tile(" ");
+            }
+        }
     }
 
     /**
      * Checks if a Player has won or it is a tie
-     * @param x player last move x-coordinate
-     * @param y player last move y-coordinate
+     *
+     * @param x          player last move x-coordinate
+     * @param y          player last move y-coordinate
      * @param currPlayer the Player to check if he has won
      * @return true or false if currentPlayer has won
      */ //TODO: Testen
@@ -72,49 +68,49 @@ public class PlayField extends Tile{
         boolean winner = false;
 
         //horizontal
-        for (ix = initNegative(x); inArea(ix) && !winner; ix++) {
-            if (field[ix][iy].getShape().equals(currPlayer.getTile().getShape())) {
+        for(ix = initNegative(x); inArea(ix) && !winner; ix++){
+            if(field[ix][iy].getShape().equals(currPlayer.getTile().getShape())){
                 winCount++;
-            } else {
+            } else{
                 winCount = 0;
             }
-            if (winCount >= win) {
+            if(winCount >= win){
                 winner = true;
             }
         }
 
         //vertical
-        for (iy = initNegative(y); inArea(iy) && !winner; iy++) {
-            if (field[ix][iy].getShape().equals(currPlayer.getTile().getShape())) {
+        for(iy = initNegative(y); inArea(iy) && !winner; iy++){
+            if(field[ix][iy].getShape().equals(currPlayer.getTile().getShape())){
                 winCount++;
-            } else {
+            } else{
                 winCount = 0;
             }
-            if (winCount >= win) {
+            if(winCount >= win){
                 winner = true;
             }
         }
 
         //left up to right down
-        for (ix = initNegative(x), iy = initNegative(y); inArea(ix) && inArea(iy) && !winner; ix++, iy++) {
-            if (field[ix][iy].getShape().equals(currPlayer.getTile().getShape())) {
+        for(ix = initNegative(x), iy = initNegative(y); inArea(ix) && inArea(iy) && !winner; ix++, iy++){
+            if(field[ix][iy].getShape().equals(currPlayer.getTile().getShape())){
                 winCount++;
-            } else {
+            } else{
                 winCount = 0;
             }
-            if (winCount >= win) {
+            if(winCount >= win){
                 winner = true;
             }
         }
 
         //left down to right up
-        for (ix = initNegative(x), iy = initPositive(y); inArea(ix) && inArea(iy) && !winner; ix++, iy--) {
-            if (field[ix][iy].getShape().equals(currPlayer.getTile().getShape())) {
+        for(ix = initNegative(x), iy = initPositive(y); inArea(ix) && inArea(iy) && !winner; ix++, iy--){
+            if(field[ix][iy].getShape().equals(currPlayer.getTile().getShape())){
                 winCount++;
-            } else {
+            } else{
                 winCount = 0;
             }
-            if (winCount >= win) {
+            if(winCount >= win){
                 winner = true;
             }
         }
@@ -124,6 +120,7 @@ public class PlayField extends Tile{
 
     /**
      * checks if the game is a tie
+     *
      * @return Tie yes or no
      */ //TODO: Testen
     boolean checkTie(){
@@ -148,7 +145,7 @@ public class PlayField extends Tile{
     }
 
     private int initPositive(int z){
-        return (z >= maxArea) ? maxArea - 1 : z;
+        return (z >= maxArea) ? maxArea - 1: z;
     }
 
     private boolean inArea(int iz){
@@ -165,7 +162,7 @@ public class PlayField extends Tile{
     /**
      * Undo the last move
      * (if Player 1 says Undo then the previous move gets undone
-     *  even if it is a move from Player 2)
+     * even if it is a move from Player 2)
      */
     public void undo(){
 
@@ -173,10 +170,11 @@ public class PlayField extends Tile{
 
     /**
      * Check if the move is allowed
-     *   * in the Playing Field
-     *   * not on Another Tile that is filled
+     * * in the Playing Field
+     * * not on Another Tile that is filled
+     *
      * @return true ... move is allowed
-     *         false ... move is not allowed
+     * false ... move is not allowed
      */
     public boolean isLegalMove(){
         return false;

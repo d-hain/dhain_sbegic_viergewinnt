@@ -25,11 +25,6 @@ public class Tile{
     private Color color;
 
     /**
-     * empty Constructor
-     */
-    public Tile(){}
-
-    /**
      * Constructor for Tile with the color and a shape
      * @param color color of the Tile in the UI
      * @param shape shape of the Tile ([A-Za-z] on keyboard)
@@ -61,7 +56,7 @@ public class Tile{
      * @param shape The shape of the Tile
      */
     public void setShape(String shape){
-        Pattern pattern = Pattern.compile("[a-zA-Z]"); //([a-zA-Z]|[ ])
+        Pattern pattern = Pattern.compile("([a-zA-Z]|[ ])"); //([a-zA-Z]|[ ])
         Matcher matcher = pattern.matcher(shape);
         if(matcher.matches()){
             this.shape = shape;
