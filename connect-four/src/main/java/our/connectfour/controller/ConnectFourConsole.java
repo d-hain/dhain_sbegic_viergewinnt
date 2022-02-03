@@ -25,8 +25,11 @@ import our.connectfour.view.PlayFieldViewConsole;
 import java.util.Scanner;
 
 public class ConnectFourConsole{
-    PlayFieldViewConsole displayField;
-    Game game;
+    private PlayField playField = new PlayField(6, 7);  // playField with 6 rows and 7 columns
+    private Player p1;
+    private Player p2;
+    private PlayFieldViewConsole displayField;
+    private Game game = new Game(playField, p1, p2);
 
     /**
      *
@@ -53,7 +56,7 @@ public class ConnectFourConsole{
 //
 //       //TODO: new PlayFieldViewConsole(game.playField.checkWin());
 //
-//        }while(game.playField.checkWin() == 3); //TODO: muss geändert werden mit checkTie
+//        }while(game.playField.checkWin() == 3);
     }
 
     /**
@@ -63,7 +66,6 @@ public class ConnectFourConsole{
      * @return gibt die generierte zufällige Zahl zurück.
      */
     private int generateNumber(int start, int end){
-
         return (int) (Math.random() * (end - start + 1)) + start;
     }
 }

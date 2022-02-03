@@ -40,14 +40,14 @@ public class PlayField{
     /**
      * Constructor for the Tile Array
      *
-     * @param maxX maximal x of the 2D Array
-     * @param maxY maximal y of the 2D Array
+     * @param maxY maximal x of the 2D Array
+     * @param maxX maximal y of the 2D Array
      */
-    public PlayField(int maxX, int maxY){
-        field = new Tile[maxX][maxY];
+    public PlayField(int maxY, int maxX){
+        field = new Tile[maxY][maxX];
 
-        for(int x = 0; x < maxX; x++){
-            for(int y = 0; y < maxY; y++){
+        for(int x = 0; x < maxY; x++){
+            for(int y = 0; y < maxX; y++){
                 field[x][y] = new Tile(" ");
             }
         }
