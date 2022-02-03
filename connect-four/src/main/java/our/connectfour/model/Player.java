@@ -25,6 +25,11 @@ package our.connectfour.model;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Player
+ *      * Constructors
+ *      * Getters and Setters
+ */
 public class Player{
     private String name;
     private Tile tile;

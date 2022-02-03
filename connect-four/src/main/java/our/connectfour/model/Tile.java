@@ -20,6 +20,11 @@ import javafx.scene.paint.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Tile
+ *      * Constructors
+ *      * Getters and Setters
+ */
 public class Tile{
     private String shape;
     private Color color;

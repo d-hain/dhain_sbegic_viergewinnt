@@ -21,8 +21,17 @@
 
 package our.connectfour.model;
 
-import java.util.Objects;
-
+/**
+ * PlayField
+ *      * Constructors
+ *      * Getters and Setters
+ *      * checkWin
+ *          * someone has won or it is a tie
+ *      * restart
+ *          * restart the game from the beginning
+ *      * undo
+ *          * undo last move
+ */
 public class PlayField{
     private Tile[][] field;
 
@@ -72,7 +81,7 @@ public class PlayField{
      * Restart the game from the beginning
      */
     public void restart(){
-
+        // TODO: machen
     }
 
     /**
@@ -81,6 +90,6 @@ public class PlayField{
      * even if it is a move from Player 2)
      */
     public void undo(){
-
+        // TODO: machen
     }
 }

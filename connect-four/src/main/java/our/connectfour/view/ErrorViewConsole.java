@@ -1,5 +1,8 @@
 package our.connectfour.view;
 
+/**
+ * Output Errors
+ */
 public class ErrorViewConsole implements ErrorView{
     @Override
     public void display(String str){

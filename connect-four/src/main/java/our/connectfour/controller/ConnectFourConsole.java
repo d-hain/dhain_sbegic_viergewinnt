@@ -18,6 +18,11 @@ import our.connectfour.view.*;
 
 import java.util.Scanner;
 
+/**
+ * ConnectFourConsole
+ *      Game Loop, etc.
+ *
+ */
 public class ConnectFourConsole{
     private PlayField playField = new PlayField(6, 7);  // playField with 6 rows and 7 columns
     private PlayFieldViewConsole pfvc = new PlayFieldViewConsole();
@@ -91,15 +96,5 @@ public class ConnectFourConsole{
     public int evalTilesLeft(int col){
         tilesLeft[col]--;
         return tilesLeft[col] + 1;
-    }
-
-    /**
-     *
-     * @param start ist der Startwert, bei dem die randomNumber beginnen soll.
-     * @param end ist der Endwert, bei dem die randomNumber aufhören soll.
-     * @return gibt die generierte zufällige Zahl zurück.
-     */
-    private int generateNumber(int start, int end){
-        return (int) (Math.random() * (end - start + 1)) + start;
     }
 }

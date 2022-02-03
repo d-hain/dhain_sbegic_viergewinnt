@@ -1,16 +1,30 @@
 package our.connectfour.model;
 
-import our.connectfour.controller.ConnectFourConsole;
 import our.connectfour.view.ErrorViewConsole;
 
 import java.util.Scanner;
 
+/**
+ * Game
+ *      initGame()
+ *          * welcome message
+ *          * read in Player names and symbols
+ *          * set Player and currPlayer
+ *      endGame()
+ *          * Tie message
+ *          * Win message
+ */
 public class Game{
     public Player p1;
     public Player p2;
     public int currPlayer = 0;
     ErrorViewConsole evc = new ErrorViewConsole();
 
+    /**
+     * welcome message
+     * read in Player names and symbols
+     * set Player and currPlayer
+     */
     public void initGame() {
         Scanner sc = new Scanner(System.in);
         String name1;

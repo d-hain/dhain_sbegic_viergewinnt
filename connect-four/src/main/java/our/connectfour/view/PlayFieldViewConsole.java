@@ -1,6 +1,9 @@
 package our.connectfour.view;
 import our.connectfour.model.*;
 
+/**
+ * Output the Playing Field
+ */
 public class PlayFieldViewConsole implements PlayFieldView{
 
     @Override

@@ -14,8 +14,9 @@
 
 package our.connectfour.controller;
 
+/**
+ * ConnectFourUI
+ *      Everything to do with the UI
+ */
 public class ConnectFourUI{
-    private int generateNumber(int start, int end){
-        return 0;
-    }
 }
