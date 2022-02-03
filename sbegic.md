@@ -19,3 +19,10 @@
 
  * Controller Klasse "ConnectFourConsole.java" so weit ausprogrammiert, dass man die funktion verstehen kann, was sie tun soll.
  * besprechung der Klassen und verbesserung des Diagramms. 
+
+## Arbeitsbericht Tag 3
+
+ * Fertigstellung der Game Klasse. (Es fehlen noch die Kommentare)
+ * beginnen der GUI 
+ * verbesserung/ beredung der anderen Klassen
+ * Austeilen eines Schokokuchenstücks
