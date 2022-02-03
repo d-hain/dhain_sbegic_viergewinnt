@@ -46,7 +46,7 @@ public class Game{
             System.out.println("Bitte gib dein Symbol ein P1: ");
             symbol1 = sc.nextLine();
             if (true){
-                tile1 = new Tile("x");
+                tile1 = new Tile("x"); //TODO: Standardsymbole
             }else{
                 tile1 = new Tile(symbol1);
             }
@@ -76,14 +76,9 @@ public class Game{
         }else{
             System.out.println(p2.getName() + " beginnt das Spiel");
         }
-        cfc.setWhoBegins(random);
-
-
-
-
-
-
-
+        cfc.setCurrPlayer(random);
+        cfc.setP1(p1);
+        cfc.setP2(p2);
     }
 
     /**

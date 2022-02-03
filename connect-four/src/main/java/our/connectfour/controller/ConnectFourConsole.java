@@ -19,7 +19,8 @@ package our.connectfour.controller;
 import our.connectfour.model.Game;
 import our.connectfour.model.PlayField;
 import our.connectfour.model.Player;
-import our.connectfour.model.Tile;
+import our.connectfour.view.ErrorViewConsole;
+import our.connectfour.view.InputViewConsole;
 import our.connectfour.view.PlayFieldViewConsole;
 
 import java.util.Scanner;
@@ -28,20 +29,14 @@ public class ConnectFourConsole{
     private PlayField playField = new PlayField(6, 7);  // playField with 6 rows and 7 columns
     private Player p1;
     private Player p2;
-    private PlayFieldViewConsole displayField;
+    private PlayFieldViewConsole pfvc = new PlayFieldViewConsole();
+    private InputViewConsole ivc = new InputViewConsole();
+    private ErrorViewConsole evc = new ErrorViewConsole();
     private Game game = new Game();
-    private int whoBegins = 0;
+    private int currPlayer = 0;
 
-    public void setWhoBegins(int whoBegins) {
-        this.whoBegins = whoBegins;
-    }
-
-    public PlayField getPlayField() {
-        return playField;
-    }
-
-    public void setPlayField(PlayField playField) {
-        this.playField = playField;
+    public void setCurrPlayer(int currPlayer) {
+        this.currPlayer = currPlayer;
     }
 
     public Player getP1() {
@@ -60,33 +55,32 @@ public class ConnectFourConsole{
         this.p2 = p2;
     }
 
+    public static void main(String[] args){
+        ConnectFourConsole cfc = new ConnectFourConsole();
+        cfc.play();
+    }
 
     /**
      *
      * play is the main function, where the game is getting started.
      */
     private void play(){
+        int input = -1;
+        Scanner scanner = new Scanner(System.in);
 
-//        do{
-//        displayField.display(game.playField);
-//        Scanner in = new Scanner(System.in);
-//        int inputLine = 0;
-//
-//        if(generateNumber(1,2) == 1){
-//            System.out.println(game.p1.getName() + " beginnt das Spiel!\n");
-//        }else{
-//            System.out.println(game.p2.getName() + " beginnt das Spiel!\n");
-//        }
-//
-//        do{
-//            System.out.println("Bitte geben Sie ihre Gewünschte Spalte an, in der Sie Ihren Stein setzen wollen: ");
-//            inputLine = in.nextInt();
-//
-//        }while(true); //TODO: game.playField.isLegalMove(inputLine)
-//
-//       //TODO: new PlayFieldViewConsole(game.playField.checkWin());
-//
-//        }while(game.playField.checkWin() == 3);
+        game.initGame();
+        pfvc.display(playField);
+        do{
+            String tempInput = "";
+
+            ivc.display();
+            tempInput = scanner.nextLine();
+            input = Integer.parseInt(tempInput);
+        }while(input < 0 || input > 6);
+
+        if(currPlayer == 1){
+            //TODO: play() Methode
+        }
     }
 
     /**
