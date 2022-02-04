@@ -34,3 +34,8 @@
  * ConnectFourConsole play() bis auf 1 Fehler fertig
  * PlayField checkWin() noch nicht ganz funktionsfähig
  * Klassen dokumentiert
+
+## Tag 5
+
+ * play() funktionsfähig
+ * restart() und checkWin() einzige unfertigen Methoden
