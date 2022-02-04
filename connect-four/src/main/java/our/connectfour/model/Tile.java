@@ -61,13 +61,24 @@ public class Tile{
      * @param shape The shape of the Tile
      */
     public void setShape(String shape){
-        Pattern pattern = Pattern.compile("([a-zA-Z]|[ ])"); //([a-zA-Z]|[ ])
-        Matcher matcher = pattern.matcher(shape);
-        if(matcher.matches()){
+        if(checkShape(shape)){
             this.shape = shape;
         } else{
             throw new IllegalArgumentException();
         }
+    }
+
+    /**
+     * Checks if the shape is valid (only letters)
+     * @param shape The shape of the Tile
+     * @return true ... shape is valid
+     *         false ... shape is not valid
+     */
+    public boolean checkShape(String shape){
+        Pattern pattern = Pattern.compile("([a-zA-Z]|[ ])"); //([a-zA-Z]|[ ])
+        Matcher matcher = pattern.matcher(shape);
+
+        return matcher.matches();
     }
 
     /**

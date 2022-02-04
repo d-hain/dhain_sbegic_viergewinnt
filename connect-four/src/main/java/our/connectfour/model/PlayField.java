@@ -76,20 +76,4 @@ public class PlayField{
         // TODO: Info: Temporär Entfernt
         return 0;
     }
-
-    /**
-     * Restart the game from the beginning
-     */
-    public void restart(){
-        // TODO: machen
-    }
-
-    /**
-     * Undo the last move
-     * (if Player 1 says Undo then the previous move gets undone
-     * even if it is a move from Player 2)
-     */
-    public void undo(){
-        // TODO: machen
-    }
 }
