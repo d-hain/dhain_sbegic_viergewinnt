@@ -17,19 +17,20 @@ import our.connectfour.model.*;
 import our.connectfour.view.*;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * ConnectFourConsole
  *      Game Loop, etc.
- *
  */
 public class ConnectFourConsole{
-    private PlayField playField = new PlayField(6, 7);  // playField with 6 rows and 7 columns
-    private PlayFieldViewConsole pfvc = new PlayFieldViewConsole();
-    private InputViewConsole ivc = new InputViewConsole();
-    private ErrorViewConsole evc = new ErrorViewConsole();
-    private Game game = new Game();
-    private int[] tilesLeft = {5, 5, 5, 5, 5, 5, 5};
+    private final PlayField playField = new PlayField(6, 7);  // playField with 6 rows and 7 columns
+    private final PlayFieldViewConsole pfvc = new PlayFieldViewConsole();
+    private final InputViewConsole ivc = new InputViewConsole();
+    private final ErrorViewConsole evc = new ErrorViewConsole();
+    private final Game game = new Game();
+    private final int[] tilesLeft = {5, 5, 5, 5, 5, 5, 5};
 
     public static void main(String[] args){
         ConnectFourConsole cfc = new ConnectFourConsole();
@@ -37,32 +38,46 @@ public class ConnectFourConsole{
     }
 
     /**
-     *
-     * play is the main function, where the game is getting started.
+     * play is the main function, where the game loop is located.
      */
     private void play(){
-        int input = -1;
+        int input;
         int win = 0;
         Scanner scanner = new Scanner(System.in);
 
+        // read in names and player shapes
         game.initGame();
         while(win == 0){
             pfvc.display(playField);
             do{
-                String tempInput = "";
+                String tempInput;
 
-                ivc.display();
+                // output which players move it is
+                if(game.currPlayer == 1){
+                    ivc.display(game.p1);
+                }else if(game.currPlayer == 2){
+                    ivc.display(game.p2);
+                }else{
+                    throw new IndexOutOfBoundsException();
+                }
+                // get player input
                 tempInput = scanner.nextLine();
+                // check if input is "r" or "restart" and restart the game
+                if(checkRestartText(tempInput)){
+                    game.restart();
+                }
                 input = Integer.parseInt(tempInput);
 
+                // check if input is valid
                 if(input < 0 || input > 6){
                     evc.display("That is not a valid input!!!");
                 }
-                if(evalTilesLeft(input) < 0){
+                if(tilesLeft[input] < 0){
                     evc.display("No space left in this column!");
                 }
-            } while(input < 0 || input > 6 || evalTilesLeft(input) < 0); // TODO: eine col kann zu "hoch" werden
+            } while(input < 0 || input > 6 || tilesLeft[input] < 0);
 
+            // set the right shape in the playing field
             int col = input;
             int row = evalTilesLeft(col);
             if(game.currPlayer == 1){
@@ -81,6 +96,7 @@ public class ConnectFourConsole{
             }
         }
 
+        // Winning or Tie message
         pfvc.display(playField);
         if (win == 2 && game.currPlayer == 1) {
             // Player 1 has won
@@ -91,10 +107,48 @@ public class ConnectFourConsole{
         } else if (win == 1) {
             game.endGame(new Player("NONEXISTENTPERSON"), true);
         }
+
+        // Ask to restart the game
+        System.out.println("Do you want to restart the game?");
+        String temp = scanner.nextLine();
+        if(checkRestartYes(temp)){
+            game.restart();
+        }
     }
 
-    public int evalTilesLeft(int col){
+    /**
+     * Calculate the row in which the input should happen
+     * @param col column
+     * @return row
+     */
+    private int evalTilesLeft(int col){
         tilesLeft[col]--;
         return tilesLeft[col] + 1;
+    }
+
+    /**
+     * check if input is "yes" or "y" (not case sensitive)
+     * @param input player input
+     * @return true ... input matches "yes" or "y"
+     *         false ... input does not match
+     */
+    private boolean checkRestartYes(String input){
+        Pattern pattern = Pattern.compile("(?i)(yes)|(y)(?i)");
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.matches();
+    }
+
+    /**
+     * check if input is "restart" or "r" (not case sensitive)
+     * @param input player input
+     * @return true ... input matches "restart" or "r"
+     *         false ... input does not match
+     */
+    private boolean checkRestartText(String input){
+        Pattern pattern = Pattern.compile("(?i)(restart)|(r)(?i)");
+        Matcher matcher = pattern.matcher(input);
+
+        return matcher.matches();
     }
 }
