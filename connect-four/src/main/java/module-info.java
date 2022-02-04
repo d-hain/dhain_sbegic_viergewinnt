@@ -2,6 +2,7 @@ module our.connectfour {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
+    requires java.desktop;
 
 
     opens our.connectfour to javafx.fxml;

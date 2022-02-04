@@ -92,9 +92,8 @@ public class Game{
 
     /**
      * everything you have to put out when someone has won
-     *
      * @param player the player that has won
-     * @param isTie  if the game is a tie or not
+     * @param isTie if the game is a tie or not
      */
     public void endGame(Player player, boolean isTie){
         System.out.println();
