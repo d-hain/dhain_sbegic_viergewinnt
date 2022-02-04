@@ -35,10 +35,9 @@ public class Game{
         String symbol2;
         Tile tile1;
         Tile tile2;
-        int random = (int) (Math.random() * 2);
+        int random = (int) (Math.random() * 1) + 1;
 
         System.out.println("Willkommen zu VierGewinnt\n");
-
         do{
             System.out.println("Bitte gib deinen Namen ein P1: ");
             name1 = sc.nextLine();
@@ -49,7 +48,6 @@ public class Game{
             if(name1.equals(name2)){
                 evc.display("Keine gleichen Namen verwenden!");
             }
-
         } while(name1.equals(name2));
         Player p1 = new Player(name1);
         Player p2 = new Player(name2);
@@ -92,8 +90,9 @@ public class Game{
 
     /**
      * everything you have to put out when someone has won
+     *
      * @param player the player that has won
-     * @param isTie if the game is a tie or not
+     * @param isTie  if the game is a tie or not
      */
     public void endGame(Player player, boolean isTie){
         System.out.println();
@@ -103,14 +102,5 @@ public class Game{
             System.out.println("CONGRATULATIONS!");
             System.out.println(player.getName() + " has won the game!");
         }
-    }
-
-    /**
-     * Restart the game from the beginning
-     */
-    public void restart(){
-        evc.display("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-
-        // TODO: machen
     }
 }

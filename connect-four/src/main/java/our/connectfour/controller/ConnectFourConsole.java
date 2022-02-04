@@ -25,12 +25,12 @@ import java.util.regex.Pattern;
  *      Game Loop, etc.
  */
 public class ConnectFourConsole{
-    private final PlayField playField = new PlayField(6, 7);  // playField with 6 rows and 7 columns
+    private PlayField playField = new PlayField(6, 7);  // playField with 6 rows and 7 columns
     private final PlayFieldViewConsole pfvc = new PlayFieldViewConsole();
     private final InputViewConsole ivc = new InputViewConsole();
     private final ErrorViewConsole evc = new ErrorViewConsole();
     private final Game game = new Game();
-    private final int[] tilesLeft = {5, 5, 5, 5, 5, 5, 5};
+    private int[] tilesLeft = {5, 5, 5, 5, 5, 5, 5};
 
     public static void main(String[] args){
         ConnectFourConsole cfc = new ConnectFourConsole();
@@ -44,7 +44,6 @@ public class ConnectFourConsole{
         int input;
         int win = 0;
         Scanner scanner = new Scanner(System.in);
-
 
         // read in names and player shapes
         game.initGame();
@@ -65,7 +64,7 @@ public class ConnectFourConsole{
                 tempInput = scanner.nextLine();
                 // check if input is "r" or "restart" and restart the game
                 if(checkRestartText(tempInput)){
-                    game.restart();
+                    restart();
                 }
                 input = Integer.parseInt(tempInput);
 
@@ -113,7 +112,7 @@ public class ConnectFourConsole{
         System.out.println("Do you want to restart the game?");
         String temp = scanner.nextLine();
         if(checkRestartYes(temp)){
-            game.restart();
+            restart();
         }
     }
 
@@ -151,5 +150,15 @@ public class ConnectFourConsole{
         Matcher matcher = pattern.matcher(input);
 
         return matcher.matches();
+    }
+
+    /**
+     * Restart the game from the beginning
+     */
+    private void restart(){
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        playField = new PlayField(6, 7);     // reset Playing Field
+        tilesLeft = new int[]{5, 5, 5, 5, 5, 5, 5};     // reset tiles left to drop
+        play();
     }
 }
