@@ -68,6 +68,7 @@ public class Tile{
         }
     }
 
+
     /**
      * Checks if the shape is valid (only letters)
      * @param shape The shape of the Tile

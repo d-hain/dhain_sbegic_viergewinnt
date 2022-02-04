@@ -111,6 +111,7 @@ public class Game{
      */
     public void restart(){
         evc.display("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+
         // TODO: machen
     }
 }

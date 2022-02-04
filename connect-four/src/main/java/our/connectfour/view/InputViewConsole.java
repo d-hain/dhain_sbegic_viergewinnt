@@ -10,4 +10,5 @@ public class InputViewConsole implements InputView{
     public void display(Player player){
         System.out.print(player.getName() + " Column: ");
     }
+
 }

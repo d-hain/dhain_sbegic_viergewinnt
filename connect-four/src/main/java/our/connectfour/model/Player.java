@@ -75,6 +75,7 @@ public class Player{
     public void setName(String name){
         Pattern pattern = Pattern.compile("[a-zA-Z0-9]+");
         Matcher matcher = pattern.matcher(name);
+
         if(matcher.matches()){
             this.name = name;
         } else{

@@ -45,6 +45,7 @@ public class ConnectFourConsole{
         int win = 0;
         Scanner scanner = new Scanner(System.in);
 
+
         // read in names and player shapes
         game.initGame();
         while(win == 0){
