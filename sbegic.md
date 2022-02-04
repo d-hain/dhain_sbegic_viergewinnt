@@ -26,3 +26,8 @@
  * beginnen der GUI 
  * verbesserung/ beredung der anderen Klassen
  * Austeilen eines Schokokuchenstücks
+
+## Arbeitsbericht Tag 4
+
+ * Beginnen mit den anderen Fenstern der GUI
+ * Überprüfen, ob das Programm runable ist.
