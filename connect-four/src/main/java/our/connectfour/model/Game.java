@@ -1,5 +1,6 @@
 package our.connectfour.model;
 
+import our.connectfour.controller.ConnectFourConsole;
 import our.connectfour.view.ErrorViewConsole;
 
 import java.util.Scanner;
@@ -52,9 +53,12 @@ public class Game{
         Player p1 = new Player(name1);
         Player p2 = new Player(name2);
 
+
+
         do {
             System.out.println("Setzen Sie nun Ihre Symbole! Falls nichts " +
                     "angegeben wird werden Standardsymbole (x für P1 & o für P2) verwendet.\n");
+
 
             System.out.println("Bitte gib dein Symbol ein P1: ");
             symbol1 = sc.nextLine();
@@ -65,6 +69,7 @@ public class Game{
                 tile1 = new Tile(symbol1);
             }
 
+
             System.out.println("Bitte gib dein Symbol ein P2: ");
             symbol2 = sc.nextLine();
             if (symbol2.equals("")){
@@ -74,12 +79,16 @@ public class Game{
                 tile2 = new Tile(symbol2);
             }
 
+
             if (symbol1.equals(symbol2)) {
                 evc.display("Keine gleichen Symbole verwenden!");
             }
+
         } while (symbol1.equals(symbol2));
         p1.setTile(tile1);
         p2.setTile(tile2);
+
+
 
         if (random == 1){
             System.out.println(p1.getName() + " beginnt das Spiel");
