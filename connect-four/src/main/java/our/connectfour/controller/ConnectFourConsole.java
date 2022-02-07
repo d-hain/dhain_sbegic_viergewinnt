@@ -32,6 +32,10 @@ public class ConnectFourConsole{
     private final Game game = new Game();
     private int[] tilesLeft = {5, 5, 5, 5, 5, 5, 5};
 
+    /**
+     * starts the play() method
+     * @param args System Arguments
+     */
     public static void main(String[] args){
         ConnectFourConsole cfc = new ConnectFourConsole();
         cfc.play();
