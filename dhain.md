@@ -39,3 +39,9 @@
 
  * play() funktionsfähig
  * restart() und checkWin() einzige unfertigen Methoden
+
+## Tag 6
+
+ * viel zu viel über checkWin() nachgedacht
+ * checkTie() hinzugefügt
+  * muss noch in die ConnectFourConsole implementiert werden 
