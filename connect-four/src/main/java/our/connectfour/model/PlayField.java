@@ -34,6 +34,8 @@ package our.connectfour.model;
  */
 public class PlayField{
     private Tile[][] field;
+    private final int maxY;
+    private final int maxX;
 
     public Tile[][] getField(){
         return field;
@@ -49,14 +51,16 @@ public class PlayField{
     /**
      * Constructor for the Tile Array
      *
-     * @param maxY maximal x of the 2D Array
-     * @param maxX maximal y of the 2D Array
+     * @param maxX maximal x of the 2D Array
+     * @param maxY maximal y of the 2D Array
      */
-    public PlayField(int maxY, int maxX){
-        field = new Tile[maxY][maxX];
+    public PlayField(int maxX, int maxY){
+        this.maxX = maxX;
+        this.maxY = maxY;
+        field = new Tile[maxX][maxY];
 
-        for(int x = 0; x < maxY; x++){
-            for(int y = 0; y < maxX; y++){
+        for(int x = 0; x < maxX; x++){
+            for(int y = 0; y < maxY; y++){
                 field[x][y] = new Tile(" ");
             }
         }
@@ -65,16 +69,51 @@ public class PlayField{
     /**
      * Checks if a Player has won, or it is a tie
      *
-     * @param col the column of the last move
-     * @param row the row of the last move
+     * @param currX the X-Pos of the last move
+     * @param currY the Y-Pos of the last move
      * @param tile current Player Tile
-     * @return 0 ... something went wrong
+     * @return 0 ... no one has won
      *         1 ... it is a tie
      *         2 ... a player has won
-     */ //TODO: Testen
-    public int checkWin(int col, int row, Tile tile){
-        // TODO: Info: Temporär Entfernt
+     */ //TODO: Change to Boolean and implement checkTie() in ConnectFourConsole
+    public int checkWin(int currX, int currY, Tile tile){
+        int win = 0;
+        int winCount = 0;
+        // horizontal checking - to right
+        for(int ix = currX; ix < maxX; ix++){
+            if(field[ix][currY] != tile || winCount == 4){
+                break;   //Bitte ned hauen :D
+            }else if(field[ix][currY] == tile){
+                winCount++;
+            }
+        }
 
-        return 0;
+        //TODO: rest of checks
+
+        if(winCount == 4){
+            win = 2;
+        }
+        //TODO: ?!
+//        if(checkTie()){
+//            win = 1;
+//        }
+        return win;
+    }
+
+    /**
+     * Checks if the game is a tie
+     * @return true ... game is a tie
+     *         false ... game is not a tie
+     */
+    private boolean checkTie(){
+        boolean isTie = false;
+ //TODO: mochn
+        for(int iy = 0; iy < maxY; iy++){
+            for(int ix = 0; ix < maxX; ix++){
+
+            }
+        }
+
+        return isTie;
     }
 }

@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
  *      Game Loop, etc.
  */
 public class ConnectFourConsole{
-    private PlayField playField = new PlayField(6, 7);  // playField with 6 rows and 7 columns
+    private PlayField playField = new PlayField(6, 7);  // playField with 7 columns and 6 rows
     private final PlayFieldViewConsole pfvc = new PlayFieldViewConsole();
     private final InputViewConsole ivc = new InputViewConsole();
     private final ErrorViewConsole evc = new ErrorViewConsole();
@@ -88,7 +88,7 @@ public class ConnectFourConsole{
                 // Player 1's move
                 playField.setTile(row, col, game.p1.getTile());
                 win = playField.checkWin(col, row, game.p1.getTile());
-                game.currPlayer = 2;
+                game.currPlayer = 2;    //TODO: Könnte ein Problem werden
             } else if(game.currPlayer == 2){
                 // Player 2's move
                 playField.setTile(row, col, game.p2.getTile());
