@@ -31,3 +31,9 @@
 
  * Beginnen mit den anderen Fenstern der GUI
  * Überprüfen, ob das Programm runable ist.
+
+## Arbeitsbericht Tag 5
+
+ * Suchen nahc der Lösung für das Erstellen eines neuen Fensters 
+ * Besprechung der Checkwin
+ * Erstellung der Button Funktionen
