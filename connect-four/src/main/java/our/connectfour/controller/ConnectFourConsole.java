@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
  *      Game Loop, etc.
  */
 public class ConnectFourConsole{
-    private PlayField playField = new PlayField(6, 7);  // playField with 7 columns and 6 rows
+    private PlayField playField = new PlayField(7, 6, 4);  // playField with 7 columns and 6 rows
     private final PlayFieldViewConsole pfvc = new PlayFieldViewConsole();
     private final InputViewConsole ivc = new InputViewConsole();
     private final ErrorViewConsole evc = new ErrorViewConsole();
@@ -87,14 +87,20 @@ public class ConnectFourConsole{
             int row = evalTilesLeft(col);
             if(game.currPlayer == 1){
                 // Player 1's move
-                playField.setTile(row, col, game.p1.getTile());
-                win = playField.checkWin(col, row, game.p1.getTile());
-                game.currPlayer = 2;    //TODO: Könnte ein Problem werden
+                playField.setTile(col, row, game.p1.getTile());
+                //TODO: checkWin -> boolean
+                //win = playField.checkWin(col, row, game.p1.getTile());
+                if(win != 2){
+                    game.currPlayer = 2;
+                }
             } else if(game.currPlayer == 2){
                 // Player 2's move
-                playField.setTile(row, col, game.p2.getTile());
-                win = playField.checkWin(col, row, game.p2.getTile());
-                game.currPlayer = 1;
+                playField.setTile(col, row, game.p2.getTile());
+                //TODO: checkWin -> boolean
+                //win = playField.checkWin(col, row, game.p2.getTile());
+                if(win != 2){
+                    game.currPlayer = 1;
+                }
             } else{
                 // Error
                 throw new IndexOutOfBoundsException();
@@ -162,7 +168,7 @@ public class ConnectFourConsole{
      */
     private void restart(){
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        playField = new PlayField(6, 7);     // reset Playing Field
+        playField = new PlayField(6, 7, 4);     // reset Playing Field
         tilesLeft = new int[]{5, 5, 5, 5, 5, 5, 5};     // reset tiles left to drop
         play();
     }

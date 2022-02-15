@@ -21,21 +21,24 @@
 
 package our.connectfour.model;
 
+import java.util.InputMismatchException;
+
 /**
  * PlayField
- *      * Constructors
- *      * Getters and Setters
- *      * checkWin
- *          * someone has won or it is a tie
- *      * restart
- *          * restart the game from the beginning
- *      * undo
- *          * undo last move
+ * * Constructors
+ * * Getters and Setters
+ * * checkWin
+ * * someone has won or it is a tie
+ * * restart
+ * * restart the game from the beginning
+ * * undo
+ * * undo last move
  */
 public class PlayField{
     private Tile[][] field;
     private final int maxY;
     private final int maxX;
+    private final int winLen;
 
     public Tile[][] getField(){
         return field;
@@ -48,69 +51,52 @@ public class PlayField{
     public void setTile(int x, int y, Tile tile){
         field[x][y] = tile;
     }
+
     /**
      * Constructor for the Tile Array
      *
-     * @param maxX maximal x of the 2D Array
-     * @param maxY maximal y of the 2D Array
+     * @param maxX   maximal x of the 2D Array
+     * @param maxY   maximal y of the 2D Array
+     * @param winLen lenght to win (in FourWins 4)
      */
-    public PlayField(int maxX, int maxY){
+    public PlayField(int maxX, int maxY, int winLen){
         this.maxX = maxX;
         this.maxY = maxY;
+        if(winLen > maxX || winLen > maxY){
+            throw new InputMismatchException("winLen too long");
+        }
+        this.winLen = winLen;
+
         field = new Tile[maxX][maxY];
 
-        for(int x = 0; x < maxX; x++){
-            for(int y = 0; y < maxY; y++){
-                field[x][y] = new Tile(" ");
+        for(int ix = 0; ix < maxX; ix++){
+            for(int iy = 0; iy < maxY; iy++){
+                field[ix][iy] = new Tile(" ");
             }
         }
     }
 
-    /**
-     * Checks if a Player has won, or it is a tie
-     *
-     * @param currX the X-Pos of the last move
-     * @param currY the Y-Pos of the last move
-     * @param tile current Player Tile
-     * @return 0 ... no one has won
-     *         1 ... it is a tie
-     *         2 ... a player has won
-     */ //TODO: Change to Boolean and implement checkTie() in ConnectFourConsole
-    public int checkWin(int currX, int currY, Tile tile){
-        int win = 0;
-        int winCount = 0;
-        // horizontal checking - to right
-        for(int ix = currX; ix < maxX; ix++){
-            if(field[ix][currY] != tile || winCount == 4){
-                break;   //Bitte ned hauen :D
-            }else if(field[ix][currY] == tile){
-                winCount++;
-            }
-        }
-
-        //TODO: rest of checks
-
-        if(winCount == 4){
-            win = 2;
-        }
-        //TODO: ?!
-//        if(checkTie()){
-//            win = 1;
-//        }
-        return win;
+    //TODO: comment
+    //TODO: HILFE
+    public boolean checkWin(){
+        return false;
     }
 
     /**
      * Checks if the game is a tie
+     *
      * @return true ... game is a tie
-     *         false ... game is not a tie
+     * false ... game is not a tie
      */
     private boolean checkTie(){
-        boolean isTie = false;
- //TODO: mochn
+        boolean isTie = true;
+
         for(int iy = 0; iy < maxY; iy++){
             for(int ix = 0; ix < maxX; ix++){
-
+                if(field[ix][iy].getShape().equals(" ")){
+                    isTie = false;
+                    break;
+                }
             }
         }
 
