@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
  *      Game Loop, etc.
  */
 public class ConnectFourConsole{
-    private PlayField playField = new PlayField(7, 6, 4);  // playField with 7 columns and 6 rows
+    private PlayField playField = new PlayField(7, 6);  // playField with 7 columns and 6 rows
     private final PlayFieldViewConsole pfvc = new PlayFieldViewConsole();
     private final InputViewConsole ivc = new InputViewConsole();
     private final ErrorViewConsole evc = new ErrorViewConsole();
@@ -47,12 +47,13 @@ public class ConnectFourConsole{
      */
     private void play(){
         int input;
-        int win = 0;
+        boolean win = false;
+        boolean tie = false;
         Scanner scanner = new Scanner(System.in);
 
         // read in names and player shapes
         game.initGame();
-        while(win == 0){
+        while(!win && !tie){
             pfvc.display(playField);
             do{
                 String tempInput;
@@ -88,17 +89,17 @@ public class ConnectFourConsole{
             if(game.currPlayer == 1){
                 // Player 1's move
                 playField.setTile(col, row, game.p1.getTile());
-                //TODO: checkWin -> boolean
-                //win = playField.checkWin(col, row, game.p1.getTile());
-                if(win != 2){
+                win = playField.checkWin(game.p1.getTile());
+                tie = playField.checkTie();
+                if(!win && !tie){
                     game.currPlayer = 2;
                 }
             } else if(game.currPlayer == 2){
                 // Player 2's move
                 playField.setTile(col, row, game.p2.getTile());
-                //TODO: checkWin -> boolean
-                //win = playField.checkWin(col, row, game.p2.getTile());
-                if(win != 2){
+                win = playField.checkWin(game.p2.getTile());
+                tie = playField.checkTie();
+                if(!win && !tie){
                     game.currPlayer = 1;
                 }
             } else{
@@ -109,13 +110,13 @@ public class ConnectFourConsole{
 
         // Winning or Tie message
         pfvc.display(playField);
-        if (win == 2 && game.currPlayer == 1) {
+        if (win && game.currPlayer == 1) {
             // Player 1 has won
             game.endGame(game.p1, false);
-        } else if (win == 2 && game.currPlayer == 2) {
+        } else if (win && game.currPlayer == 2) {
             // Player 2 has won
             game.endGame(game.p2, false);
-        } else if (win == 1) {
+        } else if (tie) {
             game.endGame(new Player("NONEXISTENTPERSON"), true);
         }
 
@@ -168,7 +169,7 @@ public class ConnectFourConsole{
      */
     private void restart(){
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-        playField = new PlayField(6, 7, 4);     // reset Playing Field
+        playField = new PlayField(7, 6);     // reset Playing Field
         tilesLeft = new int[]{5, 5, 5, 5, 5, 5, 5};     // reset tiles left to drop
         play();
     }
