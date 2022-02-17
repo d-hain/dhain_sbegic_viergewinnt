@@ -9,9 +9,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" onMouseClicked="#mouseClick" prefHeight="699.0" prefWidth="699.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="our.connectfour.controller.ConnectFourUI">
+<VBox alignment="CENTER" onMouseClicked="#mouseClick" prefHeight="699.0" prefWidth="699.0" spacing="20.0" style="-fx-background-color: #094366;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="our.connectfour.controller.ConnectFourUI">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -20,10 +19,7 @@
          <children>
             <HBox prefHeight="64.0" prefWidth="659.0">
                <children>
-                  <Button fx:id="btnHelp" mnemonicParsing="false" onAction="#onHelpBtnClick" text="Help">
-                     <font>
-                        <Font size="10.0" />
-                     </font></Button>
+                  <Button fx:id="btnHelp" mnemonicParsing="false" onAction="#onHelpBtnClick" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: #00FF00;" text="Help" />
                   <Button fx:id="btnMenu" mnemonicParsing="false" onAction="#onMenuBtnClick" text="Menü" />
                </children>
             </HBox>
@@ -33,14 +29,14 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label fx:id="labCurrPlayer" alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="398.0" text="Spieler Drann" />
+                  <Label fx:id="labCurrPlayer" alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="398.0" text="Spieler Drann" textFill="WHITE" />
                </children>
             </HBox>
          </children>
       </VBox>
       <VBox prefHeight="404.0" prefWidth="659.0">
          <children>
-            <GridPane fx:id="gridPlayField" gridLinesVisible="true" prefHeight="411.0" prefWidth="659.0">
+            <GridPane fx:id="gridPlayField" gridLinesVisible="true" prefHeight="411.0" prefWidth="659.0" style="-fx-background-color: grey;">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -71,12 +67,12 @@
                   <HBox prefHeight="100.0" prefWidth="150.0" />
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="400.0">
                      <children>
-                        <Label fx:id="labStatus" alignment="CENTER" contentDisplay="CENTER" prefHeight="117.0" prefWidth="410.0" text="Status" />
+                        <Label fx:id="labStatus" alignment="CENTER" contentDisplay="CENTER" prefHeight="117.0" prefWidth="410.0" text="Status" textFill="WHITE" />
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="150.0">
                      <children>
-                        <Button fx:id="btnRestart" mnemonicParsing="false" onAction="#onResetBtnClick" prefHeight="66.0" prefWidth="148.0" text="Restart" />
+                        <Button fx:id="btnRestart" mnemonicParsing="false" onAction="#onResetBtnClick" prefHeight="66.0" prefWidth="148.0" style="-fx-background-color: Red;" text="Restart" />
                      </children>
                   </HBox>
                </children>

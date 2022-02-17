@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="285.0" prefWidth="440.0" style="-fx-background-color: lightgreen;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label prefHeight="45.0" prefWidth="457.0" text="Hilfestellung zu 4-Gewinnt:" underline="true">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <TextArea editable="false" prefHeight="242.0" prefWidth="469.0" text="Klicken Sie in den grauen Bereich um einen Spielstein zu setzen.&#10;Beachten Sie dabei eine reihe zu wälen, die noch nicht voll ist . &#10;Ihr Ziel ist es 4 Ihrer Fraben in einer Reihe/Spalte zu haben und &#10;den Gegner daran zu hindern dies zu schaffen.&#10;Wenn Sie dieses Ziel erreicht habne Geinnen Sie. Wenn alle &#10;Felder voll sind ist es ein Unentschieden. &#10;&#10;Viel Spaß und gutes Gelingen&#10;&#10;Restart startet das Spiel neu.">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextArea>
+   </children>
+</VBox>
