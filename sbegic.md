@@ -37,3 +37,5 @@
  * Suchen nahc der Lösung für das Erstellen eines neuen Fensters 
  * Besprechung der Checkwin
  * Erstellung der Button Funktionen
+
+## Arbeitsbericht Tag 6
