@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="our.connectfour.ConnectFourApplication"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #094366;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="65.0" prefWidth="427.0">
+         <children>
+            <Label fx:id="labPlayerNum" prefHeight="76.0" prefWidth="180.0" text="PlayerNum" textFill="WHITE">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="96.0" prefWidth="140.0" text="Name:" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFieldName" prefHeight="117.0" prefWidth="340.0" style="-fx-background-color: #888888;">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="70.0" prefWidth="502.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="148.0" prefWidth="140.0" text="Color:" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+            <ColorPicker fx:id="colorPicker" prefHeight="40.0" prefWidth="154.0">
+               <HBox.margin>
+                  <Insets left="20.0" top="15.0" />
+               </HBox.margin>
+            </ColorPicker>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="47.0" prefWidth="502.0">
+         <children>
+            <Button fx:id="btnCreate" mnemonicParsing="false" prefHeight="34.0" prefWidth="98.0" style="-fx-background-color: #00FF00;" text="Create" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
