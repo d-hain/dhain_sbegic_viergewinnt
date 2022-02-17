@@ -12,7 +12,7 @@ public class ConnectFourApplication extends Application{
     public void start(Stage stage) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(ConnectFourApplication.class.getResource("create-user.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Connect Four");
+        stage.setTitle("Create Players");
         stage.setScene(scene);
 
         setUserAgentStylesheet(STYLESHEET_CASPIAN);

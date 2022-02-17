@@ -21,8 +21,6 @@
 
 package our.connectfour.model;
 
-import java.util.InputMismatchException;
-
 /**
  * PlayField
  * * Constructors
@@ -40,10 +38,6 @@ public class PlayField{
 
     public Tile[][] getField(){
         return field;
-    }
-
-    public void setField(Tile[][] field){
-        this.field = field;
     }
 
     public void setTile(int x, int y, Tile tile){
