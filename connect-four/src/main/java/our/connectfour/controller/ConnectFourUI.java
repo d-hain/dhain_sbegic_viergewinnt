@@ -20,6 +20,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+/**
+ * OnAction:
+ * FXMLLoader fxmlLoader = new FXMLLoader(ConnectFourApplication.class.getResource("connect-four-view-fxml"));
+ *         Scene scene = new Scene(fxmlLoader.load());
+ *         stage.setTitle("Connect Four");
+ *         stage.setScene(scene);
+ *         stage.show();
+ */
 
 /**
  * ConnectFourUI
